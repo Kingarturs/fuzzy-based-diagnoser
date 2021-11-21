@@ -4,9 +4,48 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/0f61084166.js" crossorigin="anonymous"></script>
 		%svelte.head%
+
+		<style>
+			body.dark {
+			--background: #0C2D48;
+			--foreground: #D4E7F4;
+			--secondary-foreground: #FFFFFF;
+		}
+
+		body.light {
+			--background: #D4E7F4;
+			--foreground: #0C2D48;
+			--secondary-foreground: #161616;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+			background-color: var(--background);
+			color: var(--foreground);
+
+			--accent: #19BD91;
+			--danger: #EE544A;
+			--white: #FFFFFF;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#svelte, body, html {
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		</style>
+
 	</head>
 	<body>
 		<div id="svelte">%svelte.body%</div>
