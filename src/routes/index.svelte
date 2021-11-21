@@ -18,7 +18,7 @@
     margin-bottom: 0.5rem;
   }
 
-  #main {
+  :global(.container) {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
@@ -65,7 +65,7 @@
   }
 </style>
 
-<section id="main">
+<section id="main" class="container">
   <div id="text-container">
     <h1 class="title">Representación de aplicación para relación de conjuntos difusos</h1>
     <p class="subtitle top-md">Contestando una serie de preguntas sobre tus síntomas sería posible determinar en cierto grado si se tiene o no una relación sintomática con una o varias enfermedades</p>
