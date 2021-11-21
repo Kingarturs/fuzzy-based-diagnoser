@@ -1,5 +1,5 @@
 <script>
-  import ErrorSvg from '/404.svg'
+  import ErrorSvg from '../../static/404.svg'
 </script>
 
 <style>
