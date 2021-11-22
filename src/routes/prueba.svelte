@@ -1,0 +1,81 @@
+<script>
+  import RangeSlider from 'svelte-range-slider-pips';
+
+  let scores = [];
+  let questions = [
+    'Question 1',
+    'Question 2',
+    'Question 3',
+    'Question 4',
+    'Question 5',
+    'Question 6',
+    'Question 7',
+    'Question 8',
+    'Question 9',
+    'Question 10'
+  ];
+  let currentQuestion = 0;
+  let currentScore = [50];
+</script>
+
+<div class="container flex-column justify-center align-center">
+  <h1 class="bottom-md">{questions[currentQuestion]}</h1>
+  <p class="bottom-lg">
+    Califique el sintoma a continuación en una escala del 0 al 100
+  </p>
+  <RangeSlider
+    bind:values={currentScore}
+    range="min"
+    float
+    pips
+    min={0}
+    max={100}
+    step={1}
+    all="label"
+    pipstep={100}
+    formatter={(x) => (x === 0 ? '😁' : x === 100 ? '😥' : x)}
+  />
+  <div class="buttons flex-row justify-evenly align-center">
+    <button class="red">Anterior</button>
+    <button class="green">Siguiente</button>
+  </div>
+</div>
+
+<style>
+  :global(.rangeSlider) {
+    width: 50%;
+  }
+
+  :global(.rangeSlider.min > .rangeHandle > .rangeNub) {
+    background: #19bd91 !important;
+  }
+
+  :global(.rangeSlider.min > .rangeBar) {
+    background: #19bd91 !important;
+  }
+
+  :global(.rangeSlider > .rangePips > .pip > .pipVal) {
+    color: lightgrey !important;
+    font-size: 20px;
+  }
+
+  :global(.rangeSlider > .rangeHandle > .rangeFloat) {
+    background: #19bd91 !important;
+  }
+
+  .buttons {
+    width: 50%;
+    padding-top: 50px;
+  }
+
+  .buttons > button {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+</style>
