@@ -1,7 +1,6 @@
 <script>
   import RangeSlider from 'svelte-range-slider-pips';
 
-  let scores = [];
   let questions = [
     'Question 1',
     'Question 2',
@@ -14,8 +13,11 @@
     'Question 9',
     'Question 10'
   ];
+  let scores = Array(questions.length).fill([50]);
   let currentQuestion = 0;
-  let currentScore = [50];
+
+  $: shouldDisableAnteriorButton = currentQuestion === 0;
+  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1;
 </script>
 
 <div class="container flex-column justify-center align-center">
@@ -24,7 +26,7 @@
     Califique el sintoma a continuación en una escala del 0 al 100
   </p>
   <RangeSlider
-    bind:values={currentScore}
+    bind:values={scores[currentQuestion]}
     range="min"
     float
     pips
@@ -36,8 +38,16 @@
     formatter={(x) => (x === 0 ? '😁' : x === 100 ? '😥' : x)}
   />
   <div class="buttons flex-row justify-evenly align-center">
-    <button class="red">Anterior</button>
-    <button class="green">Siguiente</button>
+    <button
+      disabled={shouldDisableAnteriorButton}
+      class="red"
+      on:click={() => (currentQuestion -= 1)}>Anterior</button
+    >
+    <button
+      disabled={shouldDisableSiguienteButton}
+      class="green"
+      on:click={() => (currentQuestion += 1)}>Siguiente</button
+    >
   </div>
 </div>
 
