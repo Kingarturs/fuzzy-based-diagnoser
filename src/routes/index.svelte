@@ -1,3 +1,26 @@
+<section id="main" class="container">
+  <div id="text-container">
+    <h1 class="title">
+      Representación de aplicación para relación de conjuntos difusos
+    </h1>
+    <p class="subtitle top-md">
+      Contestando una serie de preguntas sobre tus síntomas sería posible
+      determinar en cierto grado si se tiene o no una relación sintomática con
+      una o varias enfermedades
+    </p>
+    <p class="text top-lg">
+      *Es un proyecto escolar con propósitos demostrativos únicamente
+    </p>
+  </div>
+
+  <div class="top-lg">
+    <a class="button green" href="/prueba" sveltekit:prefetch>Tomar test</a>
+  </div>
+
+  <i class="fab fa-medrt main-image" />
+  <i class="fab fa-medrt main-image" />
+</section>
+
 <style>
   :global(.top-lg) {
     margin-top: 2rem;
@@ -18,6 +41,24 @@
     margin-bottom: 0.5rem;
   }
 
+  :global(.flex-column) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  :global(.flex-row) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  :global(.justify-center) {
+    justify-content: center;
+  }
+
+  :global(.align-center) {
+    align-items: center;
+  }
+
   :global(.container) {
     box-sizing: border-box;
     width: 100%;
@@ -32,7 +73,7 @@
   .title {
     font-size: 2.8rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
     line-height: 2rem;
@@ -43,7 +84,7 @@
   }
 
   .button {
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
     color: var(--white);
@@ -64,18 +105,3 @@
     bottom: -2rem;
   }
 </style>
-
-<section id="main" class="container">
-  <div id="text-container">
-    <h1 class="title">Representación de aplicación para relación de conjuntos difusos</h1>
-    <p class="subtitle top-md">Contestando una serie de preguntas sobre tus síntomas sería posible determinar en cierto grado si se tiene o no una relación sintomática con una o varias enfermedades</p>
-    <p class="text top-lg">*Es un proyecto escolar con propósitos demostrativos únicamente</p>
-  </div>
-
-  <div class="top-lg">
-    <a class="button green" href="/prueba" sveltekit:prefetch>Tomar test</a>
-  </div>
-
-  <i class="fab fa-medrt main-image" />
-  <i class="fab fa-medrt main-image" />
-</section>
