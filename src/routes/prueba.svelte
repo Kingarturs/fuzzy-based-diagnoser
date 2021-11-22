@@ -1,6 +1,7 @@
 <script>
   import RangeSlider from 'svelte-range-slider-pips';
-
+  import { goto } from "$app/navigation";
+  import {questionResults} from '../stores/_stores.js'
   let questions = [
     'Piel Roja',
     'Dolor al Orinar',
@@ -21,7 +22,11 @@
     'Protuberancias desconocidas en la mama o axila'
   ];
   let scores = Array(questions.length).fill([50]);
+  
   let currentQuestion = 0;
+
+  let finalDataArray = []
+  
 
   $: shouldDisableAnteriorButton = currentQuestion === 0;
   $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1;
@@ -48,12 +53,24 @@
     <button
       disabled={shouldDisableAnteriorButton}
       class="red"
-      on:click={() => (currentQuestion -= 1)}>Anterior</button
+      on:click={() => {
+        finalDataArray.pop()
+        currentQuestion -= 1 
+        }}>Anterior</button
     >
     <button
-      disabled={shouldDisableSiguienteButton}
       class="green"
-      on:click={() => (currentQuestion += 1)}>Siguiente</button
+      on:click={() => {
+        if(currentQuestion>=questions.length-1){
+          questionResults.set(finalDataArray)
+          goto("/resultado");
+        }
+        finalDataArray.push(scores[currentQuestion][0])
+        console.log(finalDataArray)
+        currentQuestion += 1
+        
+        
+        }}>Siguiente</button
     >
   </div>
 </div>
