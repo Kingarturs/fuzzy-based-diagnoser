@@ -55,6 +55,10 @@
     justify-content: center;
   }
 
+  :global(.justify-evenly) {
+    justify-content: space-evenly;
+  }
+
   :global(.align-center) {
     align-items: center;
   }
@@ -64,6 +68,14 @@
     width: 100%;
     height: 100vh;
     padding: 8rem 3rem 0 3rem;
+  }
+
+  :global(.green) {
+    background-color: var(--accent);
+  }
+
+  :global(.red) {
+    background-color: var(--danger);
   }
 
   #text-container {
@@ -91,10 +103,6 @@
     font-weight: bold;
     font-size: 1.1rem;
     box-sizing: border-box;
-  }
-
-  .green {
-    background-color: var(--accent);
   }
 
   .main-image {
