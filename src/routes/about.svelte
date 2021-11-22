@@ -86,7 +86,11 @@
     
     margin-left: 1rem;
     margin-right: 1rem;
-    margin-top: .2rem;
+    margin-top: 1rem;
+}
+
+a{
+    color:inherit
 }
 
 </style>
@@ -100,15 +104,41 @@
 
     <h2 class="subtitle top-md">Desarrolladores<h2>
     <div class="devImage">
-    <p class="text DevText"> Luis Arturo Garcia</p><i class="fab fa-facebook devIcon"><i class="fab fa-twitter devIcon"><i class=" fab fa-instagram devIcon"> <i class="fab fa-linkedin devIcon"></i>
+    <p class="text DevText"> Luis Arturo Garcia</p>
+    <a href="https://www.facebook.com/luisarturo.garcia.9"><i class="fab fa-facebook devIcon"></i></a>
+
+    <a href="https://twitter.com/Kingarturs1721"><i class="fab fa-twitter devIcon"></i></a>
+
+    <a href="https://www.instagram.com/kingarturs21/?hl=es-la"><i class=" fab fa-instagram devIcon"></a>
+
+    <a href="https://www.linkedin.com/in/luis-arturo"><i class="fab fa-linkedin devIcon"></i></a>
+
+     
     </div>
 
     <div class="devImage">
-    <p class="text DevText">Raúl Guzmán</p><i class="fab fa-facebook devIcon"><i class="fab fa-twitter devIcon"><i class=" fab fa-instagram devIcon"> <i class="fab fa-linkedin devIcon"></i>
+    <p class="text DevText">Raúl Guzmán</p>
+
+    <a href="https://www.facebook.com/raulguzguerrero"><i class="fab fa-facebook devIcon"></i></a>
+
+    <a href="https://twitter.com/rguzgu"><i class="fab fa-twitter devIcon"></i></a>
+
+    <a href="https://www.instagram.com/rguzg/?hl=es-la"><i class=" fab fa-instagram devIcon"></a>
+
+    <a href="linkedin.com/in/raúl-guzmán-0ba9871b0/"><i class="fab fa-linkedin devIcon"></i></a>
+
     </div>
         
     <div class="devImage">
-    <p class="text DevText">Emiliano Zuchovicki</p><i class="fab fa-facebook devIcon"><i class="fab fa-twitter devIcon"><i class=" fab fa-instagram devIcon"> <i class="fab fa-linkedin devIcon"></i>
+    <p class="text DevText">Emiliano Zuchovicki</p>
+
+    <a href="https://www.facebook.com/emiliano.zuchovicki"><i class="fab fa-facebook devIcon"></i></a>
+
+    <a href="https://twitter.com/zuchovicki1"><i class="fab fa-twitter devIcon"></i></a>
+
+    <a href="https://www.instagram.com/zucho42/?hl=es-la"><i class=" fab fa-instagram devIcon"></a>
+
+    <a href="https://www.linkedin.com/in/emiliano-zuchovicki-29a372226/"><i class="fab fa-linkedin devIcon"></i></a>
     </div>
 
     </div>
