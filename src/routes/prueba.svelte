@@ -2,16 +2,23 @@
   import RangeSlider from 'svelte-range-slider-pips';
 
   let questions = [
-    'Question 1',
-    'Question 2',
-    'Question 3',
-    'Question 4',
-    'Question 5',
-    'Question 6',
-    'Question 7',
-    'Question 8',
-    'Question 9',
-    'Question 10'
+    'Piel Roja',
+    'Dolor al Orinar',
+    'Tos',
+    'Acidez',
+    'Cansancio',
+    'Fiebre',
+    'Cambio de Peso',
+    'Sangrados Nasales',
+    'Problemas de Coagulación',
+    'Anemia',
+    'Infección Recurrente',
+    'Dificultad para Tragar',
+    'Protuberancia en el cuello',
+    'Decoloración amarillenta en la piel',
+    'Dolor en Abdomen',
+    'Dolor en Huesos',
+    'Protuberancias desconocidas en la mama o axila'
   ];
   let scores = Array(questions.length).fill([50]);
   let currentQuestion = 0;
