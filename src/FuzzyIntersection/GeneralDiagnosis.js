@@ -57,9 +57,9 @@ if(Porcientaje[indexM]<75){
     var Respuesta = ["No existe Coincidencia","Coincidencias Menores al 75"]        
     return Respuesta
 }
-
-var Respuesta = [enfermedades[indexM].Nombre,Porcientaje[indexM]]
-return Respuesta
+var confiabilidadText = Porcientaje[indexM].toString()
+var RespuestaPositiva = [enfermedades[indexM].Nombre,confiabilidadText]
+return RespuestaPositiva
 
 }
 
