@@ -42,19 +42,7 @@
     font-size: 1rem;
   }
 
-  .button {
-    padding: .5rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-sizing: border-box;
-  }
-
-  .green {
-    background-color: var(--accent);
-  }
+  
 
   .main-image {
     position: absolute;
