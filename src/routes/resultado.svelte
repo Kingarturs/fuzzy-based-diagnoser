@@ -33,7 +33,7 @@
     <div id="text-container">
       <h1 class="title">Resultado</h1>
       <h1 class="title">{Respuesta[0]}</h1>
-      <p class="subtitle top-md">Con una confiabilidad de {Respuesta[1]}%</p>
+      <p class="subtitle top-md">Con una confiabilidad de <strong>{Respuesta[1]}%</strong></p>
       <p class="text">
         Este solo es un diagnostico teórico, consulta con tu médico para una prueba
         oficial en caso de presentar sintomas
@@ -56,23 +56,9 @@
 </section>
 
 <style>
-  :global(.top-lg) {
-    margin-top: 2rem;
-  }
-  :global(.top-md) {
-    margin-top: 1rem;
-  }
-  :global(.top-sm) {
-    margin-top: 0.5rem;
-  }
-  :global(.bottom-lg) {
-    margin-bottom: 2rem;
-  }
-  :global(.bottom-md) {
-    margin-bottom: 1rem;
-  }
-  :global(.bottom-sm) {
-    margin-bottom: 0.5rem;
+
+  strong {
+    color: var(--accent);
   }
 
   #main {

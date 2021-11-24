@@ -79,24 +79,6 @@
 </section>
 
 <style>
-  :global(.top-lg) {
-    margin-top: 2rem;
-  }
-  :global(.top-md) {
-    margin-top: 1rem;
-  }
-  :global(.top-sm) {
-    margin-top: 0.5rem;
-  }
-  :global(.bottom-lg) {
-    margin-bottom: 2rem;
-  }
-  :global(.bottom-md) {
-    margin-bottom: 1rem;
-  }
-  :global(.bottom-sm) {
-    margin-bottom: 0.5rem;
-  }
 
   #main {
     box-sizing: border-box;
