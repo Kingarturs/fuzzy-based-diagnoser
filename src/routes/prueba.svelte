@@ -20,12 +20,10 @@
     'Dolor en Abdomen',
     'Dolor en Huesos',
     'Protuberancias desconocidas en la mama o axila'
-  ]
-  let scores = Array(questions.length).fill([50])
-
-  let currentQuestion = 0
-
-  let finalDataArray = []
+  ];
+  let scores = Array(questions.length).fill([50]);
+  
+  let currentQuestion = 0;  
 
   $: shouldDisableAnteriorButton = currentQuestion === 0
   $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
@@ -53,21 +51,19 @@
       disabled={shouldDisableAnteriorButton}
       class="red"
       on:click={() => {
-        finalDataArray.pop()
-        currentQuestion -= 1
-      }}>Anterior</button
-    >
+        currentQuestion -= 1 
+        }}>Anterior
+    </button>
     <button
       class="green"
       on:click={() => {
-        if (currentQuestion >= questions.length - 1) {
-          questionResults.set(finalDataArray)
-          goto('/resultado')
-        }
-        finalDataArray.push(scores[currentQuestion][0])
-        console.log(finalDataArray)
-        currentQuestion += 1
-      }}>Siguiente</button
+        if(currentQuestion>=questions.length-1){
+          questionResults.set(scores)
+          goto("/resultado");
+        } else {
+          currentQuestion += 1
+        }        
+        }}>Siguiente</button
     >
   </div>
 </div>
