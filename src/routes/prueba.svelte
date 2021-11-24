@@ -1,7 +1,7 @@
 <script>
-  import RangeSlider from 'svelte-range-slider-pips';
-  import { goto } from "$app/navigation";
-  import {questionResults} from '../stores/_stores.js'
+  import RangeSlider from 'svelte-range-slider-pips'
+  import { goto } from '$app/navigation'
+  import { questionResults } from '../stores/_stores.js'
   let questions = [
     'Piel Roja',
     'Dolor al Orinar',
@@ -25,8 +25,8 @@
   
   let currentQuestion = 0;  
 
-  $: shouldDisableAnteriorButton = currentQuestion === 0;
-  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1;
+  $: shouldDisableAnteriorButton = currentQuestion === 0
+  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
 <div class="container flex-column justify-center align-center">
@@ -52,8 +52,8 @@
       class="red"
       on:click={() => {
         currentQuestion -= 1 
-        }}>Anterior</button
-    >
+        }}>Anterior
+    </button>
     <button
       class="green"
       on:click={() => {
