@@ -24,13 +24,15 @@
   let scores = Array(questions.length).fill([50]);
   
   let currentQuestion = 0;  
+  $: progressBar = [currentQuestion + 1];
 
   $: shouldDisableAnteriorButton = currentQuestion === 0;
   $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1;
 </script>
 
+
 <div class="container flex-column justify-center align-center">
-  <h1 class="bottom-md">{questions[currentQuestion]}</h1>
+  <h1 class="top-lg bottom-md">{questions[currentQuestion]}</h1>
   <p class="bottom-lg">
     Califique el sintoma a continuación en una escala del 0 al 100
   </p>
@@ -66,6 +68,24 @@
         }}>Siguiente</button
     >
   </div>
+  <div class="progress-bar flex-column justify-evenly align-center">
+    <h4>
+      {#if currentQuestion === questions.length - 1}
+        <b>{currentQuestion + 1}/{questions.length}</b>
+      {:else}
+        {currentQuestion + 1}/{questions.length}
+      {/if}
+    </h4>
+    <RangeSlider
+      id="progress-bar"
+      bind:values={progressBar}
+      disabled
+      range="min"
+      min={1}
+      max={questions.length}
+      step={1}
+    />
+  </div>
 </div>
 
 <style>
@@ -90,6 +110,19 @@
     background: #19bd91 !important;
   }
 
+  :global(.progress-bar > .rangeSlider > .rangeHandle) {
+    display: none !important;
+  }
+
+  :global(.progress-bar > .rangeSlider) {
+    opacity: 1 !important; 
+  }
+
+  .progress-bar {
+    width: 80%;
+    margin-top: 5rem;
+  }
+
   .buttons {
     width: 50%;
     padding-top: 50px;
@@ -104,5 +137,9 @@
     color: white;
     font-size: 14px;
     cursor: pointer;
+  }
+
+  h4{
+    font-weight: normal;
   }
 </style>
