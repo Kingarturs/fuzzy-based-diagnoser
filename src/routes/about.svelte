@@ -1,4 +1,8 @@
-<section id="main">
+<script>
+  import { fly } from 'svelte/transition'
+</script>
+
+<section id="main" in:fly="{{ y: -10, duration: 100 }}">
   <div id="text-container">
     <h1 class="title">Acerca de</h1>
     <p class="subtitle top-md">
@@ -9,7 +13,7 @@
     </p>
   </div>
 
-  <div>
+  <div in:fly="{{ y: -10, duration: 100 }}">
     <h2 class="subtitle top-md">
       Desarrolladores
       <h2>
@@ -47,7 +51,7 @@
             ><i class=" fab fa-instagram devIcon" /></a
           >
 
-          <a href="linkedin.com/in/raúl-guzmán-0ba9871b0/"
+          <a href="https://www.linkedin.com/in/raúl-guzmán-0ba9871b0/"
             ><i class="fab fa-linkedin devIcon" /></a
           >
         </div>

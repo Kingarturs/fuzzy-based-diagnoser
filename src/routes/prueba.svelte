@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition';
+
   import RangeSlider from 'svelte-range-slider-pips'
   import { goto } from '$app/navigation'
   import { questionResults } from '../stores/_stores.js'
@@ -29,7 +31,7 @@
   $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
-<div class="container flex-column justify-center align-center">
+<div in:fly="{{ y: -10, duration: 100 }}" class="container flex-column justify-center align-center">
   <h1 class="bottom-md">{questions[currentQuestion]}</h1>
   <p class="bottom-lg">
     Califique el sintoma a continuación en una escala del 0 al 100
@@ -52,7 +54,9 @@
       class="red"
       on:click={() => {
         currentQuestion -= 1 
-        }}>Anterior
+      }}
+    >
+      Anterior
     </button>
     <button
       class="green"
@@ -62,9 +66,11 @@
           goto("/resultado");
         } else {
           currentQuestion += 1
-        }        
-        }}>Siguiente</button
+        }
+      }}
     >
+      Siguiente
+    </button>
   </div>
 </div>
 
@@ -93,6 +99,14 @@
   .buttons {
     width: 50%;
     padding-top: 50px;
+  }
+
+  button:disabled {
+    background-color: gray !important;
+  }
+
+  button:disabled:hover {
+    cursor: default;
   }
 
   .buttons > button {

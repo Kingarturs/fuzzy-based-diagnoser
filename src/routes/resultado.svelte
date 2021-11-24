@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition';
+
   import { questionResults } from '../stores/_stores.js'
   import { InterseccionDifusa } from '../FuzzyIntersection/GeneralDiagnosis.js'
 
@@ -28,7 +30,7 @@
   console.log(Respuesta)
 </script>
 
-<section id="main">
+<section id="main" in:fly="{{ y: -10, duration: 100 }}">
   {#if validacion == true}
     <div id="text-container">
       <h1 class="title">Resultado</h1>
@@ -58,7 +60,7 @@
 <style>
 
   strong {
-    color: var(--accent);
+    color: var(--danger);
   }
 
   #main {
