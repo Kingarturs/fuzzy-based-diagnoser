@@ -3,7 +3,8 @@
 
   import RangeSlider from 'svelte-range-slider-pips'
   import { goto } from '$app/navigation'
-  import { questionResults } from '../stores/_stores.js'
+  import { questionResults } from '../../stores/_stores.js'
+
   let questions = [
     'Piel Roja',
     'Dolor al Orinar',
@@ -23,6 +24,7 @@
     'Dolor en Huesos',
     'Protuberancias desconocidas en la mama o axila'
   ];
+
   let scores = Array(questions.length).fill([50]);
   
   let currentQuestion = 0;  
@@ -31,7 +33,10 @@
   $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
-<div in:fly="{{ y: -10, duration: 100 }}" class="container flex-column justify-center align-center">
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Test General</title>
+</svelte:head>
+<section in:fly="{{ y: -10, duration: 100 }}" class="container flex-column justify-center align-center">
   <h1 class="bottom-md">{questions[currentQuestion]}</h1>
   <p class="bottom-lg">
     Califique el sintoma a continuación en una escala del 0 al 100
@@ -72,7 +77,7 @@
       Siguiente
     </button>
   </div>
-</div>
+</section>
 
 <style>
   :global(.rangeSlider) {

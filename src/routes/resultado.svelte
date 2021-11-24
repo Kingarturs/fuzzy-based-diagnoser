@@ -30,6 +30,9 @@
   console.log(Respuesta)
 </script>
 
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Resultados</title>
+</svelte:head>
 <section id="main" in:fly="{{ y: -10, duration: 100 }}">
   {#if validacion == true}
     <div id="text-container">

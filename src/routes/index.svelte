@@ -2,6 +2,9 @@
   import { fly } from 'svelte/transition';
 </script>
 
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Inicio</title>
+</svelte:head>
 <section id="main" class="container" in:fly="{{ y: -10, duration: 100 }}">
   <div id="text-container">
     <h1 class="title">
