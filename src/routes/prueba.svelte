@@ -1,7 +1,7 @@
 <script>
-  import RangeSlider from 'svelte-range-slider-pips';
-  import { goto } from "$app/navigation";
-  import {questionResults} from '../stores/_stores.js'
+  import RangeSlider from 'svelte-range-slider-pips'
+  import { goto } from '$app/navigation'
+  import { questionResults } from '../stores/_stores.js'
   let questions = [
     'Piel Roja',
     'Dolor al Orinar',
@@ -20,16 +20,15 @@
     'Dolor en Abdomen',
     'Dolor en Huesos',
     'Protuberancias desconocidas en la mama o axila'
-  ];
-  let scores = Array(questions.length).fill([50]);
-  
-  let currentQuestion = 0;
+  ]
+  let scores = Array(questions.length).fill([50])
+
+  let currentQuestion = 0
 
   let finalDataArray = []
-  
 
-  $: shouldDisableAnteriorButton = currentQuestion === 0;
-  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1;
+  $: shouldDisableAnteriorButton = currentQuestion === 0
+  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
 <div class="container flex-column justify-center align-center">
@@ -55,22 +54,20 @@
       class="red"
       on:click={() => {
         finalDataArray.pop()
-        currentQuestion -= 1 
-        }}>Anterior</button
+        currentQuestion -= 1
+      }}>Anterior</button
     >
     <button
       class="green"
       on:click={() => {
-        if(currentQuestion>=questions.length-1){
+        if (currentQuestion >= questions.length - 1) {
           questionResults.set(finalDataArray)
-          goto("/resultado");
+          goto('/resultado')
         }
         finalDataArray.push(scores[currentQuestion][0])
         console.log(finalDataArray)
         currentQuestion += 1
-        
-        
-        }}>Siguiente</button
+      }}>Siguiente</button
     >
   </div>
 </div>
