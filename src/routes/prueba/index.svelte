@@ -104,7 +104,7 @@
     #main {
       flex-direction: column;
       overflow-y: scroll;
-      padding-top: 2rem;
+      padding-top: 6rem;
     }
 
     .line {
@@ -118,6 +118,14 @@
     .top-line {
       border-top: 2px solid var(--foreground);
       margin-bottom: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    #main {
+      flex-direction: column;
+      overflow-y: scroll;
+      padding-top: 2rem;
     }
   }
 </style>
