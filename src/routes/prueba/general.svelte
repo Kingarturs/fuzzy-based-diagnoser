@@ -162,4 +162,8 @@
   h4 {
     font-weight: normal;
   }
+
+  p {
+    text-align: center;
+  }
 </style>
