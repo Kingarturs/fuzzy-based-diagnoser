@@ -86,6 +86,36 @@
 </section>
 
 <style>
+  @media (max-width: 500px){
+    #main{
+      padding: 6rem 3rem 0 3rem !important;
+    }
+
+    #text-container{
+      width: 22rem !important;
+    }
+
+    .subtitle{
+      font-size: 0.9rem !important;
+    }
+
+    .title{
+      font-size: 2rem !important;
+    }
+
+    .devImage {
+      width: 22rem !important;
+      align-items: center !important;
+    }
+
+    .DevText {
+      width: 10rem !important;
+    }
+
+    .main-image{
+      display: none !important;
+    }
+  }
 
   #main {
     box-sizing: border-box;
