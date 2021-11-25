@@ -130,6 +130,10 @@
     opacity: 1 !important;
   }
 
+  h1 {
+    text-align: center;
+  }
+
   .progress-bar {
     width: 80%;
     margin-top: 5rem;
@@ -161,5 +165,26 @@
 
   h4 {
     font-weight: normal;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 4rem 2rem;
+      justify-content: flex-start;
+    }
+
+    :global(.rangeSlider) {
+      width: 90%;
+    }
+
+    .buttons {
+      width: 100%;
+    }
+    
+    .buttons > button {
+      font-size: 1.1rem;
+      padding: 0.5rem 2rem;
+      width: auto;
+    }
   }
 </style>

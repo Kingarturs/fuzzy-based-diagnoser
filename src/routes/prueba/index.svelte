@@ -23,7 +23,7 @@
 
   <span class="line" />
   
-  <div class="option" in:fly="{{ x: 50, duration: 100 }}">
+  <div class="option top-line" in:fly="{{ x: 50, duration: 100 }}">
     <p class="title bold">Diagnóstico específico</p>
     <p class="text top-md">Selecciona las enfermedades con las que quieres comparar tus síntomas</p>
 
@@ -98,5 +98,34 @@
 
   .disabled {
     background-color: gray;
+  }
+
+  @media screen and (max-width: 768px) {
+    #main {
+      flex-direction: column;
+      overflow-y: scroll;
+      padding-top: 6rem;
+    }
+
+    .line {
+      display: none;
+    }
+
+    .option {
+      padding: 2rem 0;
+    }
+
+    .top-line {
+      border-top: 2px solid var(--foreground);
+      margin-bottom: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    #main {
+      flex-direction: column;
+      overflow-y: scroll;
+      padding-top: 2rem;
+    }
   }
 </style>
