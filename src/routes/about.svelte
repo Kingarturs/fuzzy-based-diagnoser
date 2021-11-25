@@ -6,7 +6,7 @@
   <title>Fuzzy Based Diagnoser | Acerca de</title>
 </svelte:head>
 <section id="main" in:fly="{{ y: -10, duration: 100 }}">
-  <div id="text-container">
+  <div id="text-container" in:fly="{{ x: -50, duration: 100 }}">
     <h1 class="title">Acerca de</h1>
     <p class="subtitle top-md">
       Este es un proyecto realizado por estudiantes de la Universidad Autónoma
@@ -16,7 +16,7 @@
     </p>
   </div>
 
-  <div in:fly="{{ y: -10, duration: 100 }}">
+  <div in:fly="{{ x: -50, duration: 100 }}">
     <h2 class="subtitle top-md">
       Desarrolladores
       <h2>
@@ -82,7 +82,7 @@
     </h2>
   </div>
 
-  <i class="fab fa-connectdevelop main-image" />
+  <i class="fab fa-connectdevelop main-image" in:fly="{{ x: 50, duration: 100 }}"/>
 </section>
 
 <style>
@@ -122,7 +122,8 @@
   .DevText {
     margin-top: 1rem;
     width: 15rem;
-    color: var(--accent)
+    color: var(--accent);
+    font-weight: 600;
   }
 
   .devImage {

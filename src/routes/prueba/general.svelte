@@ -30,13 +30,12 @@
   let currentQuestion = 0;  
 
   $: shouldDisableAnteriorButton = currentQuestion === 0
-  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
 <svelte:head>
   <title>Fuzzy Based Diagnoser | Test General</title>
 </svelte:head>
-<section in:fly="{{ y: -10, duration: 100 }}" class="container flex-column justify-center align-center">
+<section in:fly="{{ y: -20, duration: 100 }}" class="container flex-column justify-center align-center">
   <h1 class="bottom-md">{questions[currentQuestion]}</h1>
   <p class="bottom-lg">
     Califique el sintoma a continuación en una escala del 0 al 100
@@ -53,7 +52,7 @@
     pipstep={100}
     formatter={(x) => (x === 0 ? '😁' : x === 100 ? '😥' : x)}
   />
-  <div class="buttons flex-row justify-evenly align-center">
+  <div class="buttons flex-row justify-evenly align-center bottom-lg">
     <button
       disabled={shouldDisableAnteriorButton}
       class="red"

@@ -5,8 +5,8 @@
 <svelte:head>
   <title>Fuzzy Based Diagnoser | Inicio</title>
 </svelte:head>
-<section id="main" class="container" in:fly="{{ y: -10, duration: 100 }}">
-  <div id="text-container">
+<section id="main" class="container">
+  <div id="text-container" in:fly="{{ x: -50, duration: 100 }}">
     <h1 class="title">
       Representación de aplicaciones para relación de conjuntos difusos
     </h1>
@@ -20,11 +20,11 @@
     </p>
   </div>
 
-  <div class="top-lg">
+  <div class="top-lg" in:fly="{{ x: -50, duration: 100 }}">
     <a class="button green" href="/prueba" sveltekit:prefetch>Tomar test</a>
   </div>
 
-  <i class="fab fa-medrt main-image" />
+  <i class="fab fa-medrt main-image" in:fly="{{ x: +50, duration: 100 }}"/>
 </section>
 
 <style>
@@ -50,7 +50,7 @@
     border-radius: 5px;
     text-decoration: none;
     color: var(--white);
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.1rem;
     box-sizing: border-box;
   }
