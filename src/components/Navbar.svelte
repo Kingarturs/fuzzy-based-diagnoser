@@ -100,6 +100,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     position: fixed;
+    background-color: var(--background);
   }
 
   #navbar a {
@@ -198,6 +199,11 @@
   :global(.mobile-item):hover {
     text-decoration: none;
   }
+
+  .mobile {
+    display: none;
+  }
+
   .open {
     height: 12rem;
   }
@@ -221,9 +227,6 @@
     #navbar {
       padding: 0 2rem;
       overflow: hidden;
-    }
-    :global(.nav-icon){
-      padding: 0 0.5rem;
     }
   }
 
