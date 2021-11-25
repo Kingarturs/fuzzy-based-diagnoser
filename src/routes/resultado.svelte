@@ -47,7 +47,7 @@
       </h1>
       <p class="subtitle top-md">
         Ninguna de las enfermedades seleccionadas ha encontrado una coincidencia
-        con un valor mayor al 75%
+        con un valor mayor al 50%
       </p>
     {/if}
 

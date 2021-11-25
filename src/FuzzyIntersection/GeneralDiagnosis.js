@@ -47,8 +47,8 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
     }
   })
 
-  if (Porcientaje[indexM] < 75) {
-    var Respuesta = ['No existe Coincidencia', 'Coincidencias Menores al 75']
+  if (Porcientaje[indexM] < 50) {
+    var Respuesta = ['No existe Coincidencia', 'Coincidencias Menores al 50']
     return Respuesta
   }
   var confiabilidadText = Porcientaje[indexM].toString()
