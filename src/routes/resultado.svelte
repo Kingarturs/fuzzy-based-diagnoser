@@ -32,8 +32,8 @@
   <title>Fuzzy Based Diagnoser | Resultados</title>
 </svelte:head>
 <section id="main" in:fly="{{ y: -10, duration: 100 }}">
-  {#if validacion == true}
-    <div id="text-container">
+  <div id="text-container">
+    {#if validacion == true}
       <h1 class="title">Resultado:</h1>
       <h1 class="title">{Respuesta[0]}</h1>
       <p class="subtitle top-md">Con una confiabilidad de <strong>{Number(Respuesta[1]).toFixed(4)}%</strong></p>
@@ -41,10 +41,7 @@
         Este solo es un diagnóstico teórico, consulta con tu médico para una prueba
         oficial en caso de presentar sintomas
       </p>
-    </div>
-  {/if}
-  {#if validacion == false}
-    <div id="text-container">
+    {:else}
       <h1 class="title">
         No se encontraron coincidencias suficientemente altas
       </h1>
@@ -52,8 +49,10 @@
         Ninguna de las enfermedades seleccionadas ha encontrado una coincidencia
         con un valor mayor al 75%
       </p>
-    </div>
-  {/if}
+    {/if}
+
+    <a href="/prueba" class="button green top-lg">Volver a hacer el test 🚀</a>
+  </div>
 
   <i class="far fa-lightbulb main-image" />
 </section>
@@ -73,6 +72,8 @@
 
   #text-container {
     width: 45rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .title {
@@ -94,5 +95,15 @@
     color: var(--accent);
     right: -5rem;
     bottom: -2rem;
+  }
+
+  .button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: fit-content;
   }
 </style>
