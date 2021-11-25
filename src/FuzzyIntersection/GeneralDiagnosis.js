@@ -23,6 +23,7 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
   enfermedades.forEach((enfermedad, index) => {
     if (EnfermedadesSeleccionadas[index] == 0) {
       ArrayIntersecciones.push(Interseccion)
+      Porcientaje.push((0 / maximo) * 100)
       return
     }
     for (let index = 0; index < Sintomas; index++) {
