@@ -1,7 +1,10 @@
 <script>
+  import { fly } from 'svelte/transition'
+
   import RangeSlider from 'svelte-range-slider-pips'
   import { goto } from '$app/navigation'
-  import { questionResults } from '../stores/_stores.js'
+  import { questionResults } from '../../stores/_stores.js'
+
   let questions = [
     'Piel Roja',
     'Dolor al Orinar',
@@ -20,19 +23,24 @@
     'Dolor en Abdomen',
     'Dolor en Huesos',
     'Protuberancias desconocidas en la mama o axila'
-  ];
-  let scores = Array(questions.length).fill([50]);
-  
-  let currentQuestion = 0;  
-  $: progressBar = [currentQuestion + 1];
+  ]
+
+  let scores = Array(questions.length).fill([50])
+
+  let currentQuestion = 0
+  $: progressBar = [currentQuestion + 1]
 
   $: shouldDisableAnteriorButton = currentQuestion === 0
-  $: shouldDisableSiguienteButton = currentQuestion === questions.length - 1
 </script>
 
-
-<div class="container flex-column justify-center align-center">
-  <h1 class="top-lg bottom-md">{questions[currentQuestion]}</h1>
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Test Específico</title>
+</svelte:head>
+<section
+  in:fly={{ y: -20, duration: 100 }}
+  class="container flex-column justify-center align-center"
+>
+  <h1 class="bottom-md">{questions[currentQuestion]}</h1>
   <p class="bottom-lg">
     Califique el sintoma a continuación en una escala del 0 al 100
   </p>
@@ -48,25 +56,29 @@
     pipstep={100}
     formatter={(x) => (x === 0 ? '😁' : x === 100 ? '😥' : x)}
   />
-  <div class="buttons flex-row justify-evenly align-center">
+  <div class="buttons flex-row justify-evenly align-center bottom-lg">
     <button
       disabled={shouldDisableAnteriorButton}
       class="red"
       on:click={() => {
-        currentQuestion -= 1 
-        }}>Anterior
+        currentQuestion -= 1
+      }}
+    >
+      Anterior
     </button>
     <button
       class="green"
       on:click={() => {
-        if(currentQuestion>=questions.length-1){
+        if (currentQuestion >= questions.length - 1) {
           questionResults.set(scores)
-          goto("/resultado");
+          goto('/resultado')
         } else {
           currentQuestion += 1
-        }        
-        }}>Siguiente</button
+        }
+      }}
     >
+      Siguiente
+    </button>
   </div>
   <div class="progress-bar flex-column justify-evenly align-center">
     <h4>
@@ -86,7 +98,7 @@
       step={1}
     />
   </div>
-</div>
+</section>
 
 <style>
   :global(.rangeSlider) {
@@ -115,7 +127,11 @@
   }
 
   :global(.progress-bar > .rangeSlider) {
-    opacity: 1 !important; 
+    opacity: 1 !important;
+  }
+
+  h1 {
+    text-align: center;
   }
 
   .progress-bar {
@@ -126,6 +142,14 @@
   .buttons {
     width: 50%;
     padding-top: 50px;
+  }
+
+  button:disabled {
+    background-color: gray !important;
+  }
+
+  button:disabled:hover {
+    cursor: default;
   }
 
   .buttons > button {
@@ -139,7 +163,28 @@
     cursor: pointer;
   }
 
-  h4{
+  h4 {
     font-weight: normal;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 4rem 2rem;
+      justify-content: flex-start;
+    }
+
+    :global(.rangeSlider) {
+      width: 90%;
+    }
+
+    .buttons {
+      width: 100%;
+    }
+    
+    .buttons > button {
+      font-size: 1.1rem;
+      padding: 0.5rem 2rem;
+      width: auto;
+    }
   }
 </style>

@@ -23,6 +23,7 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
   enfermedades.forEach((enfermedad, index) => {
     if (EnfermedadesSeleccionadas[index] == 0) {
       ArrayIntersecciones.push(Interseccion)
+      Porcientaje.push((0 / maximo) * 100)
       return
     }
     for (let index = 0; index < Sintomas; index++) {
@@ -54,13 +55,3 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
   var RespuestaPositiva = [enfermedades[indexM].Nombre, confiabilidadText]
   return RespuestaPositiva
 }
-
-// if(mayor<2){
-//     console.log("Sin Iguales")
-// }
-// console.log(enfermedades[indexM].Nombre);
-// console.log("Confiabilidad == "+Porcientaje[indexM])
-// console.log(ArrayIntersecciones)
-
-// console.log("/////")
-// console.log(Porcientaje)
