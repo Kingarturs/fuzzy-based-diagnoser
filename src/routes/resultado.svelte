@@ -51,7 +51,7 @@
       </p>
     {/if}
 
-    <a href="/prueba" class="button green top-lg">Volver a hacer el test 🚀</a>
+    <a href="/prueba" class="button green top-lg">Volver a hacer el test <span class="normal">🚀</span></a>
   </div>
 
   <i class="far fa-lightbulb main-image" />
@@ -89,6 +89,10 @@
     font-size: 1rem;
   }
 
+  .normal {
+    font-weight: normal;
+  }
+
   .main-image {
     position: absolute;
     font-size: 38vw;
@@ -105,5 +109,44 @@
     font-size: 1rem;
     box-sizing: border-box;
     width: fit-content;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 768px) {
+    #main {
+      padding-top: 6rem;
+    }
+
+    .title {
+      font-size: 2.2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .text {
+      font-size: 0.9rem;
+    }
+
+    #text-container {
+      width: 100%;
+    }
+
+    .main-image {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      top: auto;
+      margin-top: 2rem;
+      font-size: 30vw;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    #main {
+      padding-top: 2rem;
+    }
   }
 </style>

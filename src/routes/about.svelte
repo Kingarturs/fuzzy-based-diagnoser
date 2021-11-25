@@ -86,13 +86,14 @@
 </section>
 
 <style>
-  @media (max-width: 500px){
+  @media (max-width: 550px){
     #main{
-      padding: 6rem 3rem 0 3rem !important;
+      padding: 4rem 3rem 0 3rem !important;
+      overflow-y: scroll;
     }
 
     #text-container{
-      width: 22rem !important;
+      width: 100% !important;
     }
 
     .subtitle{
@@ -104,7 +105,7 @@
     }
 
     .devImage {
-      width: 22rem !important;
+      width: 100% !important;
       align-items: center !important;
     }
 
@@ -113,7 +114,14 @@
     }
 
     .main-image{
-      display: none !important;
+      position: relative !important;
+      height: fit-content;
+      box-sizing: border-box;
+      font-size: 80vw !important;
+      left: auto;
+      bottom: auto;
+      right: auto;
+      top: auto;
     }
   }
 
