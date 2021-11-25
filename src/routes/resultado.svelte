@@ -1,13 +1,13 @@
 <script>
   import { fly } from 'svelte/transition';
 
-  import { questionResults } from '../stores/_stores.js'
+  import { questionResults, selectedDiseases } from '../stores/_stores.js'
   import { InterseccionDifusa } from '../FuzzyIntersection/GeneralDiagnosis.js'
 
-  let TemporalArray = Array(16).fill(1)
+  let TemporalArray = $selectedDiseases
 
   let NormalizedData = []
-  console.log($questionResults)
+
   if ($questionResults != null) {
     $questionResults.forEach((x) => {
       x = x / 100
@@ -26,8 +26,6 @@
   if (Respuesta[0] == 'No existe Coincidencia') {
     validacion = false
   }
-
-  console.log(Respuesta)
 </script>
 
 <svelte:head>

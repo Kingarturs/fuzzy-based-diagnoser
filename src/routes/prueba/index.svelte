@@ -1,9 +1,12 @@
 <script>
   import { fly } from 'svelte/transition'
   import Pill from '../../components/Pill.svelte'
+  import { selectedDiseases } from '../../stores/_stores';
 
   import variables from '../../FuzzyIntersection/variables'
-  let enfermedades = []
+  let enfermedades = Array().fill(0)
+
+  $: disabled = !enfermedades.includes(1)
 
 </script>
 
@@ -30,7 +33,11 @@
       {/each} 
     </div>
 
-    <a href="/prueba/specific" class="button green top-lg bottom-lg">Empezar!</a>
+    {#if disabled}
+      <button disabled class="disabled button green top-lg bottom-lg">Empezar!</button>
+    {:else}
+      <a href={"/prueba/specific"} class="button green top-lg bottom-lg" on:click={() => selectedDiseases.set(enfermedades)}>Empezar!</a>
+    {/if}
   </div>
 </section>
 
@@ -87,5 +94,9 @@
     font-weight: 600;
     font-size: 1rem;
     box-sizing: border-box;
+  }
+
+  .disabled {
+    background-color: gray;
   }
 </style>
