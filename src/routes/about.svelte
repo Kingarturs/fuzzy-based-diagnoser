@@ -86,6 +86,44 @@
 </section>
 
 <style>
+  @media (max-width: 550px){
+    #main{
+      padding: 4rem 3rem 0 3rem !important;
+      overflow-y: scroll;
+    }
+
+    #text-container{
+      width: 100% !important;
+    }
+
+    .subtitle{
+      font-size: 0.9rem !important;
+    }
+
+    .title{
+      font-size: 2rem !important;
+    }
+
+    .devImage {
+      width: 100% !important;
+      align-items: center !important;
+    }
+
+    .DevText {
+      width: 10rem !important;
+    }
+
+    .main-image{
+      position: relative !important;
+      height: fit-content;
+      box-sizing: border-box;
+      font-size: 80vw !important;
+      left: auto;
+      bottom: auto;
+      right: auto;
+      top: auto;
+    }
+  }
 
   #main {
     box-sizing: border-box;

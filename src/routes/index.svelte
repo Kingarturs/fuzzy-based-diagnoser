@@ -21,7 +21,7 @@
   </div>
 
   <div class="top-lg" in:fly="{{ x: -50, duration: 100 }}">
-    <a class="button green" href="/prueba" sveltekit:prefetch>Tomar test</a>
+    <a class="button green bottom-md" href="/prueba" sveltekit:prefetch>Tomar test</a>
   </div>
 
   <i class="fab fa-medrt main-image" in:fly="{{ x: +50, duration: 100 }}"/>
@@ -61,5 +61,39 @@
     color: var(--accent);
     right: -5rem;
     bottom: -2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #main {
+      padding: 4rem 2rem 0rem 2rem;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .main-image {
+      position: relative;
+      font-size: 50vw;
+      right: 0;
+      bottom: 0;
+      margin-top: 3rem;
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+    }
+    
+    #text-container {
+      width: 100%;
+    }
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .text {
+      font-size: 0.9rem;
+    }
   }
 </style>
