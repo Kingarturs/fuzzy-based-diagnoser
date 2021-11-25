@@ -55,13 +55,3 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
   var RespuestaPositiva = [enfermedades[indexM].Nombre, confiabilidadText]
   return RespuestaPositiva
 }
-
-// if(mayor<2){
-//     console.log("Sin Iguales")
-// }
-// console.log(enfermedades[indexM].Nombre);
-// console.log("Confiabilidad == "+Porcientaje[indexM])
-// console.log(ArrayIntersecciones)
-
-// console.log("/////")
-// console.log(Porcientaje)

@@ -33,7 +33,7 @@
     >
     <a
       href="/prueba"
-      class={$page.path === '/prueba' ? 'active' : 'inactive'}
+      class={/\/prueba/i.test($page.path) ? 'active' : 'inactive'}
       sveltekit:prefetch>Prueba</a
     >
     <a

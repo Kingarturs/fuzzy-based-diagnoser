@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition';
+
   import { questionResults } from '../stores/_stores.js'
   import { InterseccionDifusa } from '../FuzzyIntersection/GeneralDiagnosis.js'
 
@@ -28,14 +30,17 @@
   console.log(Respuesta)
 </script>
 
-<section id="main">
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Resultados</title>
+</svelte:head>
+<section id="main" in:fly="{{ y: -10, duration: 100 }}">
   {#if validacion == true}
     <div id="text-container">
-      <h1 class="title">Resultado</h1>
+      <h1 class="title">Resultado:</h1>
       <h1 class="title">{Respuesta[0]}</h1>
-      <p class="subtitle top-md">Con una confiabilidad de <strong>{Respuesta[1]}%</strong></p>
+      <p class="subtitle top-md">Con una confiabilidad de <strong>{Number(Respuesta[1]).toFixed(4)}%</strong></p>
       <p class="text">
-        Este solo es un diagnostico teórico, consulta con tu médico para una prueba
+        Este solo es un diagnóstico teórico, consulta con tu médico para una prueba
         oficial en caso de presentar sintomas
       </p>
     </div>
@@ -58,7 +63,7 @@
 <style>
 
   strong {
-    color: var(--accent);
+    color: var(--danger);
   }
 
   #main {
