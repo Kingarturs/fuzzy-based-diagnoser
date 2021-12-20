@@ -1,8 +1,9 @@
 <script>
+  import { fly } from 'svelte/transition';
   import ErrorSvg from '../../static/404.svg'
 </script>
 
-<section id="error">
+<section id="error" in:fly="{{ y: -10, duration: 100 }}">
   <div class="text">
     <p class="title">404</p>
     <p>No pudimos encontrar la ruta que estás buscando...</p>

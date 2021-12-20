@@ -1,5 +1,12 @@
-<section id="main">
-  <div id="text-container">
+<script>
+  import { fly } from 'svelte/transition'
+</script>
+
+<svelte:head>
+  <title>Fuzzy Based Diagnoser | Acerca de</title>
+</svelte:head>
+<section id="main" in:fly="{{ y: -10, duration: 100 }}">
+  <div id="text-container" in:fly="{{ x: -50, duration: 100 }}">
     <h1 class="title">Acerca de</h1>
     <p class="subtitle top-md">
       Este es un proyecto realizado por estudiantes de la Universidad Autónoma
@@ -9,7 +16,7 @@
     </p>
   </div>
 
-  <div>
+  <div in:fly="{{ x: -50, duration: 100 }}">
     <h2 class="subtitle top-md">
       Desarrolladores
       <h2>
@@ -47,7 +54,7 @@
             ><i class=" fab fa-instagram devIcon" /></a
           >
 
-          <a href="linkedin.com/in/raúl-guzmán-0ba9871b0/"
+          <a href="https://www.linkedin.com/in/raúl-guzmán-0ba9871b0/"
             ><i class="fab fa-linkedin devIcon" /></a
           >
         </div>
@@ -75,10 +82,48 @@
     </h2>
   </div>
 
-  <i class="fab fa-connectdevelop main-image" />
+  <i class="fab fa-connectdevelop main-image" in:fly="{{ x: 50, duration: 100 }}"/>
 </section>
 
 <style>
+  @media (max-width: 550px){
+    #main{
+      padding: 4rem 3rem 0 3rem !important;
+      overflow-y: scroll;
+    }
+
+    #text-container{
+      width: 100% !important;
+    }
+
+    .subtitle{
+      font-size: 0.9rem !important;
+    }
+
+    .title{
+      font-size: 2rem !important;
+    }
+
+    .devImage {
+      width: 100% !important;
+      align-items: center !important;
+    }
+
+    .DevText {
+      width: 10rem !important;
+    }
+
+    .main-image{
+      position: relative !important;
+      height: fit-content;
+      box-sizing: border-box;
+      font-size: 80vw !important;
+      left: auto;
+      bottom: auto;
+      right: auto;
+      top: auto;
+    }
+  }
 
   #main {
     box-sizing: border-box;
@@ -115,7 +160,8 @@
   .DevText {
     margin-top: 1rem;
     width: 15rem;
-    color: var(--accent)
+    color: var(--accent);
+    font-weight: 600;
   }
 
   .devImage {

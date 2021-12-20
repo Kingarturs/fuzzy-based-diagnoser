@@ -23,6 +23,7 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
   enfermedades.forEach((enfermedad, index) => {
     if (EnfermedadesSeleccionadas[index] == 0) {
       ArrayIntersecciones.push(Interseccion)
+      Porcientaje.push((0 / maximo) * 100)
       return
     }
     for (let index = 0; index < Sintomas; index++) {
@@ -46,21 +47,11 @@ export function InterseccionDifusa(ArrayUsuario, EnfermedadesSelected) {
     }
   })
 
-  if (Porcientaje[indexM] < 75) {
-    var Respuesta = ['No existe Coincidencia', 'Coincidencias Menores al 75']
+  if (Porcientaje[indexM] < 50) {
+    var Respuesta = ['No existe Coincidencia', 'Coincidencias Menores al 50']
     return Respuesta
   }
   var confiabilidadText = Porcientaje[indexM].toString()
   var RespuestaPositiva = [enfermedades[indexM].Nombre, confiabilidadText]
   return RespuestaPositiva
 }
-
-// if(mayor<2){
-//     console.log("Sin Iguales")
-// }
-// console.log(enfermedades[indexM].Nombre);
-// console.log("Confiabilidad == "+Porcientaje[indexM])
-// console.log(ArrayIntersecciones)
-
-// console.log("/////")
-// console.log(Porcientaje)
